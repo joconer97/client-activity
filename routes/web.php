@@ -53,6 +53,15 @@ Route::get('/person/update/{id}/{username}/{password}',function($id,$username,$p
     return $person;
 });
 
+Route::get('/person/delete/{id}',function($id){
+    
+    $person = App\Person::find($id);
+
+    $person->delete();
+
+    return $person;
+});
+
 
 // Route::get('/artist',function(){
 
